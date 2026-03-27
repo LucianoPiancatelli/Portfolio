@@ -1,0 +1,254 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600&family=Syne:wght@400;600;800&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+  --font-syne: 'Syne', sans-serif;
+  --font-manrope: 'Manrope', sans-serif;
+
+  --color-obsidian: #050505;
+  --color-obsidian-light: #111111;
+  --color-obsidian-glass: rgba(17, 17, 17, 0.4);
+
+  --color-magenta: #ff0055;
+  --color-magenta-glow: rgba(255, 0, 85, 0.5);
+  --color-cyan: #00f4ff;
+  --color-cyan-glow: rgba(0, 244, 255, 0.5);
+
+  --color-text-main: #ffffff;
+  --color-text-muted: #a0a0a0;
+
+  --color-border-glass: rgba(255, 255, 255, 0.08);
+  --color-border-glow: rgba(255, 255, 255, 0.2);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-obsidian text-text-main font-manrope;
+    margin: 0;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-syne text-text-main;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-obsidian;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-obsidian-light border border-border-glass rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-border-glow;
+}
+
+.glass-panel {
+  @apply bg-obsidian-glass backdrop-blur-xl border border-border-glass rounded-3xl shadow-[0_8px_32px_0_rgba(0,0,0,0.5)];
+}
+
+.glass-panel-hover {
+  @apply transition-all duration-500 hover:border-border-glow hover:shadow-[0_8px_32px_0_rgba(255,0,85,0.1)];
+}
+
+.text-glow-magenta {
+  text-shadow: 0 0 20px var(--color-magenta-glow);
+}
+
+.text-glow-cyan {
+  text-shadow: 0 0 20px var(--color-cyan-glow);
+}
+
+.anime-reveal {
+  opacity: 0;
+  transform: translate3d(0, 30px, 0);
+  transition:
+    opacity 0.9s ease,
+    transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+.anime-reveal.is-visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+.timeline-line {
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform 1s ease;
+  transition-delay: 150ms;
+}
+
+.timeline-line.is-visible {
+  transform: scaleY(1);
+}
+
+.bg-orb {
+  animation: orb-drift 18s ease-in-out infinite alternate;
+  will-change: transform;
+}
+
+.orb-1 {
+  animation-duration: 19s;
+}
+
+.orb-2 {
+  animation-delay: -6s;
+  animation-duration: 24s;
+}
+
+.orb-3 {
+  animation-delay: -12s;
+  animation-duration: 28s;
+}
+
+.hero-intro {
+  animation: hero-fade 1s ease-out both;
+}
+
+.hero-card {
+  animation: hero-float 5s ease-in-out infinite alternate;
+}
+
+.hero-line {
+  opacity: 0;
+  transform: translateY(24px);
+  animation: hero-line-in 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.hero-line:nth-child(1) {
+  animation-delay: 120ms;
+}
+
+.hero-line:nth-child(2) {
+  animation-delay: 220ms;
+}
+
+.hero-line:nth-child(3) {
+  animation-delay: 340ms;
+}
+
+.hero-line:nth-child(4) {
+  animation-delay: 460ms;
+}
+
+.skill-card {
+  animation: card-float 4.8s ease-in-out infinite;
+  animation-delay: var(--float-delay, 0ms);
+}
+
+.about-shimmer {
+  animation: shimmer 2s linear infinite;
+}
+
+#root {
+  min-height: 100vh;
+  width: 100%;
+}
+
+@keyframes hero-fade {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes hero-line-in {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes hero-float {
+  from {
+    transform: translateY(-4px);
+  }
+
+  to {
+    transform: translateY(6px);
+  }
+}
+
+@keyframes orb-drift {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+
+  50% {
+    transform: translate3d(7vw, -4vh, 0) scale(1.08);
+  }
+
+  100% {
+    transform: translate3d(-6vw, 6vh, 0) scale(0.94);
+  }
+}
+
+@keyframes card-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes shimmer {
+  from {
+    transform: translateX(-100%);
+  }
+
+  to {
+    transform: translateX(100%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .anime-reveal,
+  .hero-line,
+  .timeline-line {
+    opacity: 1;
+    transform: none;
+  }
+}
