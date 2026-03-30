@@ -1,4 +1,4 @@
-import { Code2, Database, Layout, Server, Smartphone, Sparkles, Wrench } from 'lucide-react';
+import { BarChart3, Code2, Database, Image, Layout, Palette, PenTool, Search, Server, Smartphone, Sparkles, Wrench } from 'lucide-react';
 
 export default function Skills() {
   const skills = [
@@ -7,9 +7,14 @@ export default function Skills() {
     { name: 'JavaScript', category: 'Interacción', icon: <Code2 className="h-8 w-8" />, color: 'text-yellow-400', bg: 'bg-yellow-400/10' },
     { name: 'React / Vue', category: 'Frontend moderno', icon: <Code2 className="h-8 w-8" />, color: 'text-cyan', bg: 'bg-cyan/10' },
     { name: 'PHP / Laravel', category: 'Backend', icon: <Server className="h-8 w-8" />, color: 'text-magenta', bg: 'bg-magenta/10' },
-    { name: 'MySQL', category: 'Bases de Datos', icon: <Database className="h-8 w-8" />, color: 'text-blue-400', bg: 'bg-blue-400/10' },
+    { name: 'MySQL', category: 'Bases de datos', icon: <Database className="h-8 w-8" />, color: 'text-blue-400', bg: 'bg-blue-400/10' },
     { name: 'WordPress', category: 'CMS', icon: <Wrench className="h-8 w-8" />, color: 'text-blue-500', bg: 'bg-blue-500/10' },
     { name: 'UI / UX', category: 'Diseño', icon: <Smartphone className="h-8 w-8" />, color: 'text-magenta', bg: 'bg-magenta/10' },
+    { name: 'Figma', category: 'Diseño de interfaz', icon: <PenTool className="h-8 w-8" />, color: 'text-cyan', bg: 'bg-cyan/10' },
+    { name: 'Photoshop', category: 'Edición visual', icon: <Image className="h-8 w-8" />, color: 'text-blue-400', bg: 'bg-blue-400/10' },
+    { name: 'Illustrator', category: 'Identidad gráfica', icon: <Palette className="h-8 w-8" />, color: 'text-orange-400', bg: 'bg-orange-400/10' },
+    { name: 'Google Analytics', category: 'Medición', icon: <BarChart3 className="h-8 w-8" />, color: 'text-yellow-400', bg: 'bg-yellow-400/10' },
+    { name: 'SEO', category: 'Posicionamiento', icon: <Search className="h-8 w-8" />, color: 'text-magenta', bg: 'bg-magenta/10' },
   ];
 
   return (
@@ -18,7 +23,7 @@ export default function Skills() {
         <h2 className="text-glow-magenta inline-block pb-4 text-5xl font-bold">Tecnologías</h2>
         <div className="mx-auto mt-2 h-1 w-24 rounded-full bg-gradient-to-r from-magenta to-cyan" />
         <p className="mx-auto mt-6 max-w-2xl text-lg text-text-muted">
-          Las herramientas con las que convierto ideas, interfaces y flujos de negocio en productos digitales listos para salir a producción.
+          Las herramientas con las que convierto ideas, identidades visuales, flujos de negocio y objetivos de crecimiento en productos digitales listos para salir a producción.
         </p>
       </div>
 

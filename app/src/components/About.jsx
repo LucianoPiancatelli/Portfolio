@@ -18,7 +18,7 @@ export default function About() {
           </div>
 
           <p className="text-lg leading-relaxed text-text-muted">
-            Soy un desarrollador web enfocado en construir interfaces que funcionen con solidez y, al mismo tiempo, dejen una impresión visual fuerte. Trabajo en el cruce entre frontend, diseño UI y producto para transformar ideas en experiencias claras, rápidas y memorables.
+            Soy un desarrollador full stack enfocado en construir productos digitales sólidos, claros y visualmente cuidados. Trabajo desde la experiencia de usuario y la identidad visual hasta la lógica de negocio, integraciones y datos para transformar ideas en soluciones listas para crecer.
           </p>
         </div>
 

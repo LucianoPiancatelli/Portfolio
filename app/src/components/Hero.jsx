@@ -7,7 +7,7 @@ export default function Hero() {
 
         <div className="relative z-10">
           <p className="hero-line mb-4 font-syne text-sm font-semibold uppercase tracking-[0.35em] text-cyan/80">
-            Frontend Developer · UI Builder
+            Full Stack Developer · Product Builder
           </p>
 
           <h1 className="hero-line text-glow-magenta mb-6 text-5xl font-bold leading-tight tracking-tight md:text-7xl lg:text-8xl">
@@ -16,11 +16,11 @@ export default function Hero() {
           </h1>
 
           <h2 className="hero-line mb-8 text-2xl font-light text-text-muted md:text-4xl">
-            Desarrollo interfaces con presencia visual, criterio de producto y foco en conversión.
+            Desarrollo productos digitales end to end con foco en experiencia, negocio y conversión.
           </h2>
 
           <p className="hero-line mx-auto mb-12 max-w-2xl text-lg text-text-muted md:text-xl">
-            Portfolio orientado a mostrar trabajo real: sitios veloces, experiencias memorables y soluciones que combinan diseño, frontend y claridad de implementación.
+            Portfolio orientado a mostrar trabajo real: soluciones full stack que integran diseño, frontend, backend y una implementación clara para llevar ideas a producción.
           </p>
 
           <div className="hero-line flex flex-col items-center justify-center gap-4 sm:flex-row">
