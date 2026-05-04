@@ -5,100 +5,125 @@ export default function Projects() {
     {
       title: 'JOBLU',
       description: 'Plataforma full stack enfocada en mejorar la búsqueda laboral con IA, generación de CV optimizados para ATS y herramientas para vacantes y networking profesional.',
+      role: 'Rol: Full stack (UI + API + arquitectura)',
+      result: 'Resultado: MVP funcional + deploy público.',
       tech: ['React', 'Node.js', 'Express', 'Tailwind', 'MongoDB', 'OpenAI'],
       github: 'https://github.com/LucianoPiancatelli/Tesis-Joblu',
       live: 'https://joblu.vercel.app/',
       image: '/projects/joblu.png',
-      color: 'from-cyan to-blue-600',
     },
     {
       title: 'Multiverse Comics',
       description: 'E-commerce de cómics construido con Laravel, catálogo dinámico, gestión de productos y una experiencia pensada para una comunidad de lectores.',
+      role: 'Rol: Full stack (Laravel + UI + base de datos)',
+      result: 'Resultado: catálogo + administración de productos.',
       tech: ['PHP', 'Laravel 11', 'MySQL', 'Tailwind', 'Vite', 'Blade'],
       github: 'https://github.com/LucianoPiancatelli/multiverse-comics',
       live: '',
       image: '/projects/multiverse.png',
-      color: 'from-magenta to-purple-600',
     },
     {
       title: 'Gusto Argento',
       description: 'Landing page para un restaurante de comida argentina con foco en identidad visual, presentación de marca y captación rápida.',
+      role: 'Rol: Diseño + desarrollo frontend',
+      result: 'Resultado: landing rápida y responsive.',
       tech: ['HTML', 'CSS', 'JavaScript', 'Bootstrap'],
       github: 'https://github.com/LucianoPiancatelli/Gusto-Argento',
       live: 'https://gustoargentodavinci.netlify.app/',
       image: '/projects/gusto-argento.png',
-      color: 'from-cyan to-magenta',
     },
   ];
+
+  const tilts = ['tilt-l', 'tilt-md', 'tilt-r'];
 
   return (
     <section id="projects" className="relative z-10 w-full px-4 py-24 md:px-8">
       <div className="anime-reveal mb-20 text-center">
-        <h2 className="inline-block pb-4 text-5xl font-bold text-white">
-          Proyectos <span className="bg-gradient-to-r from-cyan to-blue-400 bg-clip-text text-transparent text-glow-cyan">Destacados</span>
+        <h2 className="inline-block pb-4 text-5xl font-bold text-text-main md:text-6xl">
+          <span className="typewriter">Proyectos </span>
+          <span className="typewriter bg-gradient-to-r from-cyan to-blue-400 bg-clip-text text-transparent text-glow-cyan">Destacados</span>
         </h2>
-        <div className="mx-auto mt-4 h-px w-32 bg-gradient-to-r from-transparent via-cyan to-transparent" />
+        <div className="gothic-divider mx-auto mt-4" />
       </div>
 
-      <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+      <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
         {projects.map((project, index) => (
           <div
             key={project.title}
-            className="glass-panel glass-panel-hover anime-reveal group relative flex h-full cursor-pointer flex-col overflow-hidden transform-gpu transition-all duration-500 hover:-translate-y-2"
+            className={`glass-panel glass-panel-hover anime-reveal ${tilts[index % tilts.length]} ${index % 2 === 0 ? '' : 'alt'} group relative flex h-full cursor-pointer flex-col overflow-hidden transform-gpu`}
             style={{ '--reveal-delay': `${index * 120}ms` }}
           >
-            <div className={`pointer-events-none absolute -inset-10 -z-10 rounded-full bg-gradient-to-br ${project.color} opacity-0 blur-[100px] transition-all duration-500 mix-blend-screen group-hover:scale-110 group-hover:opacity-100`} />
-
-            <div className="relative h-48 w-full overflow-hidden border-b border-border-glass bg-obsidian-light">
+            <div className="relative w-full overflow-hidden border-b-2 border-text-main bg-obsidian-light aspect-[16/9]">
               <img
                 src={project.image}
                 alt={`Vista previa de ${project.title}`}
                 className="absolute inset-0 h-full w-full object-cover"
                 loading="lazy"
+                decoding="async"
+                width="1280"
+                height="720"
+                style={{ filter: 'sepia(0.18) contrast(0.95) saturate(0.85)' }}
               />
 
-              <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4IiBoZWlnaHQ9IjgiPgo8cmVjdCB3aWR0aD0iOCIgaGVpZ2h0PSI4IiBmaWxsPSIjZmZmIiBmaWxsLW9wYWNpdHk9IjAuMDUiPjwvcmVjdD4KPHBhdGggZD0iTTAgMEw4IDhaTTggMEwwIDhaIiBzdHJva2U9IiMwMDAiIHN0cm9rZS1vcGFjaXR5PSIwLjE1IiBzdHJva2Utd2lkdGg9IjEiPjwvcGF0aD4KPC9zdmc+')] opacity-50" />
-              <div className="absolute inset-0 bg-gradient-to-t from-obsidian-light to-transparent opacity-80 transition-opacity duration-500 group-hover:opacity-40" />
+              <div
+                aria-hidden="true"
+                className="absolute inset-0 mix-blend-multiply opacity-40"
+                style={{
+                  backgroundImage:
+                    "url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/></filter><rect width='160' height='160' filter='url(%23n)' opacity='0.35'/></svg>\")",
+                }}
+              />
 
-              <div className="absolute bottom-4 left-4 flex flex-wrap gap-2">
+              <div className="absolute bottom-3 left-3 flex flex-wrap gap-2">
                 {project.tech.slice(0, 2).map((tech) => (
-                  <span key={tech} className="rounded-full border border-white/10 bg-black/50 px-2 py-1 font-syne text-[10px] font-bold uppercase tracking-wider text-white backdrop-blur-md">
+                  <span key={tech} className="sketch-chip text-sm">
                     {tech}
                   </span>
                 ))}
                 {project.tech.length > 2 ? (
-                  <span className="rounded-full border border-white/10 bg-black/50 px-2 py-1 font-syne text-[10px] font-bold uppercase tracking-wider text-white backdrop-blur-md">
+                  <span className="sketch-chip text-sm">
                     +{project.tech.length - 2}
                   </span>
                 ) : null}
               </div>
             </div>
 
-            <div className="project-content relative z-10 flex flex-grow flex-col p-6 transition-transform duration-500 group-hover:-translate-y-2">
-              <h3 className="mb-3 text-2xl font-bold text-white transition-colors group-hover:text-cyan">{project.title}</h3>
-              <p className="mb-6 flex-grow text-sm leading-relaxed text-text-muted">{project.description}</p>
+            <div className="project-content relative z-10 flex flex-grow flex-col p-6">
+              <h3 className="mb-3 text-3xl font-bold text-text-main transition-colors group-hover:text-magenta">{project.title}</h3>
+              <p className="mb-6 flex-grow text-base leading-relaxed text-text-main">{project.description}</p>
 
-              <div className="invisible mb-8 flex h-0 flex-wrap gap-2 opacity-0 transition-all duration-300 group-hover:visible group-hover:h-auto group-hover:opacity-100">
-                {project.tech.map((tech) => (
-                  <span key={tech} className="border-b border-cyan/20 px-1 font-mono text-xs text-cyan/70">
-                    {tech}
-                  </span>
-                ))}
+              <div className="mb-6 space-y-3">
+                <div className="flex flex-col gap-1 text-base text-text-main/80">
+                  <div className="font-syne text-lg tracking-wide text-text-main">{project.role}</div>
+                  <div className="font-syne text-lg tracking-wide text-text-main/85">{project.result}</div>
+                </div>
+
+                <div className="flex flex-wrap gap-2">
+                  {project.tech.map((tech) => (
+                    <span key={tech} className="sketch-chip text-sm">
+                      {tech}
+                    </span>
+                  ))}
+                </div>
               </div>
 
-              <div className="mt-auto flex items-center justify-between gap-4 border-t border-border-glass pt-4">
-                <a href={project.github} target="_blank" rel="noreferrer" className="group/link flex items-center gap-2 text-sm font-semibold text-text-muted transition-colors hover:text-white">
-                  <Github size={18} className="transition-colors group-hover/link:text-magenta" />
+              <div className="mt-auto flex items-center justify-between gap-4 border-t-2 border-dashed border-text-main/40 pt-4">
+                <a href={project.github} target="_blank" rel="noreferrer" className="group/link flex items-center gap-2 text-base font-semibold text-text-main transition-colors hover:text-magenta">
+                  <span className="draw-on-view inline-flex">
+                    <Github size={18} />
+                  </span>
                   <span>Código</span>
                 </a>
 
                 {project.live ? (
-                  <a href={project.live} target="_blank" rel="noreferrer" className="group/link flex items-center gap-2 text-sm font-semibold text-text-muted transition-colors hover:text-white">
+                  <a href={project.live} target="_blank" rel="noreferrer" className="group/link flex items-center gap-2 text-base font-semibold text-text-main transition-colors hover:text-cyan">
                     <span>Ver sitio</span>
-                    <ExternalLink size={18} className="transition-colors group-hover/link:text-cyan" />
+                    <span className="draw-on-view inline-flex">
+                      <ExternalLink size={18} />
+                    </span>
                   </a>
                 ) : (
-                  <span className="text-sm font-semibold text-text-muted/60">Sin demo pública</span>
+                  <span className="text-base font-semibold text-text-main/60">Sin demo pública</span>
                 )}
               </div>
             </div>

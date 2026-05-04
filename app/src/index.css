@@ -1,25 +1,25 @@
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600&family=Syne:wght@400;600;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Patrick+Hand&family=Indie+Flower&display=swap');
 
 @import "tailwindcss";
 
 @theme {
-  --font-syne: 'Syne', sans-serif;
-  --font-manrope: 'Manrope', sans-serif;
+  --font-syne: 'Caveat', 'Indie Flower', cursive;
+  --font-manrope: 'Patrick Hand', 'Caveat', cursive;
 
-  --color-obsidian: #050505;
-  --color-obsidian-light: #111111;
-  --color-obsidian-glass: rgba(17, 17, 17, 0.4);
+  --color-obsidian: #fbfaf5;
+  --color-obsidian-light: #f3eee2;
+  --color-obsidian-glass: rgba(251, 250, 245, 0.92);
 
-  --color-magenta: #ff0055;
-  --color-magenta-glow: rgba(255, 0, 85, 0.5);
-  --color-cyan: #00f4ff;
-  --color-cyan-glow: rgba(0, 244, 255, 0.5);
+  --color-magenta: #a8423a;
+  --color-magenta-glow: rgba(168, 66, 58, 0.35);
+  --color-cyan: #2b3a67;
+  --color-cyan-glow: rgba(43, 58, 103, 0.28);
 
-  --color-text-main: #ffffff;
-  --color-text-muted: #a0a0a0;
+  --color-text-main: #2c2c2c;
+  --color-text-muted: rgba(44, 44, 44, 0.62);
 
-  --color-border-glass: rgba(255, 255, 255, 0.08);
-  --color-border-glow: rgba(255, 255, 255, 0.2);
+  --color-border-glass: rgba(44, 44, 44, 0.18);
+  --color-border-glow: rgba(168, 66, 58, 0.45);
 }
 
 @layer base {
@@ -32,6 +32,16 @@
     margin: 0;
     min-height: 100vh;
     overflow-x: hidden;
+    color: #2c2c2c;
+    background-color: #fbfaf5;
+    background-image:
+      url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32'><path d='M0 0H32M0 32H32M0 0V32M32 0V32' fill='none' stroke='rgba(44,44,44,0.06)' stroke-width='1'/></svg>"),
+      url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/></filter><rect width='160' height='160' filter='url(%23n)' opacity='0.18'/></svg>");
+    background-attachment: fixed, fixed;
+    background-size: 32px 32px, 320px 320px;
+    background-repeat: repeat, repeat;
+    font-size: 1.05rem;
+    letter-spacing: 0.01em;
   }
 
   h1,
@@ -41,44 +51,169 @@
   h5,
   h6 {
     @apply font-syne text-text-main;
+    color: #2c2c2c;
+    letter-spacing: 0;
+    font-weight: 600;
+  }
+
+  p,
+  span,
+  li,
+  label,
+  a,
+  button,
+  input,
+  textarea {
+    font-family: 'Patrick Hand', 'Caveat', cursive;
+  }
+
+  ::selection {
+    background-color: rgba(168, 66, 58, 0.85);
+    color: #fbfaf5;
   }
 }
 
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 10px;
 }
 
 ::-webkit-scrollbar-track {
-  @apply bg-obsidian;
+  background: #f3eee2;
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-obsidian-light border border-border-glass rounded-full;
+  background: #2c2c2c;
+  border: 2px solid #f3eee2;
+  border-radius: 999px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  @apply bg-border-glow;
+  background: #a8423a;
 }
 
+/* ----------------------------------------------------------
+   Sketchbook panels (renamed visual, same className)
+---------------------------------------------------------- */
 .glass-panel {
-  @apply bg-obsidian-glass backdrop-blur-xl border border-border-glass rounded-3xl shadow-[0_8px_32px_0_rgba(0,0,0,0.5)];
+  position: relative;
+  background: #fdfcf7;
+  border: 2px solid #2c2c2c;
+  border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;
+  box-shadow:
+    3px 4px 0 rgba(44, 44, 44, 0.12),
+    0 14px 30px -18px rgba(44, 44, 44, 0.25);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  transform: rotate(-0.35deg);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.glass-panel.alt {
+  border-radius: 15px 225px 15px 255px / 225px 15px 255px 15px;
+  transform: rotate(0.35deg);
+}
+
+.glass-panel.tilt-l {
+  transform: rotate(-1deg);
+}
+
+.glass-panel.tilt-r {
+  transform: rotate(0.8deg);
+}
+
+.glass-panel.tilt-md {
+  transform: rotate(-0.4deg);
+}
+
+.glass-panel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  background-image:
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='160' height='160' filter='url(%23n)' opacity='0.10'/></svg>");
+  mix-blend-mode: multiply;
+  opacity: 0.5;
 }
 
 .glass-panel-hover {
-  @apply transition-all duration-500 hover:border-border-glow hover:shadow-[0_8px_32px_0_rgba(255,0,85,0.1)];
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
+.glass-panel-hover:hover {
+  transform: rotate(-0.2deg) translateY(-3px);
+  box-shadow:
+    5px 7px 0 rgba(44, 44, 44, 0.14),
+    0 22px 40px -18px rgba(44, 44, 44, 0.3);
+}
+
+.glass-panel.tilt-l:hover {
+  transform: rotate(-0.6deg) translateY(-3px);
+}
+
+.glass-panel.tilt-r:hover {
+  transform: rotate(0.4deg) translateY(-3px);
+}
+
+/* ----------------------------------------------------------
+   Ink underlines & accents (same classNames, new look)
+---------------------------------------------------------- */
 .text-glow-magenta {
-  text-shadow: 0 0 20px var(--color-magenta-glow);
+  text-shadow: 0.5px 0.5px 0 rgba(44, 44, 44, 0.15);
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 12' preserveAspectRatio='none'><path d='M2 8 C 40 2, 80 12, 120 6 S 198 4, 198 8' fill='none' stroke='%23a8423a' stroke-width='2.4' stroke-linecap='round'/></svg>");
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  background-size: 100% 0.45em;
+  padding-bottom: 0.2em;
 }
 
 .text-glow-cyan {
-  text-shadow: 0 0 20px var(--color-cyan-glow);
+  text-shadow: 0.5px 0.5px 0 rgba(44, 44, 44, 0.15);
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 12' preserveAspectRatio='none'><path d='M2 8 C 60 14, 110 2, 160 8 S 198 6, 198 8' fill='none' stroke='%232b3a67' stroke-width='2.4' stroke-linecap='round'/></svg>");
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  background-size: 100% 0.45em;
+  padding-bottom: 0.2em;
 }
 
+/* Bring gradient-clipped headings back to a flat ink look without touching JSX */
+.bg-gradient-to-r.bg-clip-text.text-transparent {
+  background: none !important;
+  -webkit-text-fill-color: #a8423a !important;
+  color: #a8423a !important;
+}
+
+.text-glow-cyan.bg-gradient-to-r.bg-clip-text.text-transparent,
+.bg-gradient-to-r.from-cyan.bg-clip-text.text-transparent {
+  -webkit-text-fill-color: #2b3a67 !important;
+  color: #2b3a67 !important;
+}
+
+/* ----------------------------------------------------------
+   Hand-drawn divider
+---------------------------------------------------------- */
+.gothic-divider {
+  height: 14px;
+  width: 12rem;
+  margin-inline: auto;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 240 14' preserveAspectRatio='none'><path d='M4 8 C 40 2, 80 14, 120 7 S 200 3, 236 9' fill='none' stroke='%232c2c2c' stroke-width='2' stroke-linecap='round'/><circle cx='120' cy='7' r='2.2' fill='%23a8423a'/></svg>");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+  background-color: transparent;
+}
+
+.gothic-divider::after {
+  content: none;
+}
+
+/* ----------------------------------------------------------
+   Reveal & timeline
+---------------------------------------------------------- */
 .anime-reveal {
   opacity: 0;
-  transform: translate3d(0, 30px, 0);
+  transform: translate3d(0, 24px, 0);
   transition:
     opacity 0.9s ease,
     transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
@@ -93,7 +228,7 @@
 .timeline-line {
   transform: scaleY(0);
   transform-origin: top;
-  transition: transform 1s ease;
+  transition: transform 1.2s ease;
   transition-delay: 150ms;
 }
 
@@ -101,23 +236,26 @@
   transform: scaleY(1);
 }
 
+.timeline-line.timeline-wavy {
+  width: 32px !important;
+  background: none !important;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='400' viewBox='0 0 32 400' preserveAspectRatio='none'><path d='M16 0 C 4 50, 28 100, 16 150 S 4 250, 16 300 S 28 380, 16 400' fill='none' stroke='%232c2c2c' stroke-width='2' stroke-linecap='round'/></svg>") !important;
+  background-repeat: no-repeat !important;
+  background-size: 100% 100% !important;
+}
+
+/* ----------------------------------------------------------
+   Hero / floats kept (subtler)
+---------------------------------------------------------- */
 .bg-orb {
-  animation: orb-drift 18s ease-in-out infinite alternate;
-  will-change: transform;
+  display: none !important;
 }
 
-.orb-1 {
-  animation-duration: 19s;
-}
-
-.orb-2 {
-  animation-delay: -6s;
-  animation-duration: 24s;
-}
-
-.orb-3 {
-  animation-delay: -12s;
-  animation-duration: 28s;
+@supports (content-visibility: auto) {
+  section:not(#hero) {
+    content-visibility: auto;
+    contain-intrinsic-size: 900px;
+  }
 }
 
 .hero-intro {
@@ -125,12 +263,12 @@
 }
 
 .hero-card {
-  animation: hero-float 5s ease-in-out infinite alternate;
+  animation: hero-float 6s ease-in-out infinite alternate;
 }
 
 .hero-line {
   opacity: 0;
-  transform: translateY(24px);
+  transform: translateY(20px);
   animation: hero-line-in 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
@@ -151,12 +289,12 @@
 }
 
 .skill-card {
-  animation: card-float 4.8s ease-in-out infinite;
+  animation: card-float 5.2s ease-in-out infinite;
   animation-delay: var(--float-delay, 0ms);
 }
 
 .about-shimmer {
-  animation: shimmer 2s linear infinite;
+  display: none !important;
 }
 
 #root {
@@ -164,73 +302,185 @@
   width: 100%;
 }
 
-@keyframes hero-fade {
+/* ----------------------------------------------------------
+   Draw-on-view (line-drawing for SVGs)
+---------------------------------------------------------- */
+.draw-on-view svg {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  overflow: visible;
+}
+
+.draw-on-view svg :is(path, circle, rect, line, polyline, polygon, ellipse) {
+  fill: none;
+  stroke: currentColor;
+  stroke-dasharray: 240;
+  stroke-dashoffset: 240;
+  transition: stroke-dashoffset 1.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.draw-on-view.is-drawn svg :is(path, circle, rect, line, polyline, polygon, ellipse) {
+  stroke-dashoffset: 0;
+}
+
+.draw-on-view.no-draw-fill svg,
+.draw-on-view.no-draw-fill svg :is(path, circle, rect, line, polyline, polygon, ellipse) {
+  fill: currentColor;
+  stroke: none;
+  stroke-dasharray: none;
+  stroke-dashoffset: 0;
+}
+
+/* ----------------------------------------------------------
+   Typewriter
+---------------------------------------------------------- */
+.typewriter {
+  position: relative;
+}
+
+.typewriter .tw-char {
+  opacity: 0;
+  display: inline-block;
+  transform: translateY(2px);
+  white-space: pre;
+}
+
+.typewriter.tw-running .tw-char {
+  animation: tw-in 60ms ease forwards;
+  animation-delay: var(--tw-d, 0ms);
+}
+
+.typewriter.tw-done .tw-char {
+  opacity: 1;
+  transform: none;
+}
+
+.typewriter .tw-cursor {
+  display: inline-block;
+  width: 0.04em;
+  margin-left: 0.05em;
+  vertical-align: -0.1em;
+  height: 0.95em;
+  background: #a8423a;
+  opacity: 0;
+}
+
+.typewriter.tw-running .tw-cursor,
+.typewriter.tw-done .tw-cursor {
+  opacity: 1;
+  animation: tw-blink 1s steps(1) infinite;
+}
+
+.typewriter.tw-finished .tw-cursor {
+  opacity: 0;
+  animation: none;
+}
+
+@keyframes tw-in {
   from {
     opacity: 0;
+    transform: translateY(3px);
   }
-
   to {
     opacity: 1;
+    transform: none;
   }
 }
 
-@keyframes hero-line-in {
-  from {
+@keyframes tw-blink {
+  50% {
     opacity: 0;
-    transform: translateY(24px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
   }
 }
 
-@keyframes hero-float {
-  from {
-    transform: translateY(-4px);
-  }
-
-  to {
-    transform: translateY(6px);
-  }
+/* ----------------------------------------------------------
+   Sketch chips, inputs, buttons
+---------------------------------------------------------- */
+.sketch-chip {
+  border: 1.5px solid #2c2c2c;
+  border-radius: 25px 8px 22px 6px / 8px 22px 6px 25px;
+  background: transparent;
+  padding: 0.15rem 0.65rem;
+  font-family: 'Patrick Hand', cursive;
+  letter-spacing: 0.02em;
+  color: #2c2c2c;
 }
 
-@keyframes orb-drift {
-  0% {
-    transform: translate3d(0, 0, 0) scale(1);
-  }
-
-  50% {
-    transform: translate3d(7vw, -4vh, 0) scale(1.08);
-  }
-
-  100% {
-    transform: translate3d(-6vw, 6vh, 0) scale(0.94);
-  }
+.sketch-input {
+  background: transparent !important;
+  border: none !important;
+  border-bottom: 2px solid #2c2c2c !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  padding: 0.5rem 0.25rem !important;
+  font-family: 'Patrick Hand', cursive !important;
+  color: #2c2c2c !important;
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent 0,
+    transparent calc(1.6em - 1px),
+    rgba(44, 44, 44, 0.12) calc(1.6em - 1px),
+    rgba(44, 44, 44, 0.12) 1.6em
+  ) !important;
 }
 
-@keyframes card-float {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-
-  50% {
-    transform: translateY(-8px);
-  }
+.sketch-input:focus {
+  outline: none !important;
+  border-bottom-color: #a8423a !important;
+  box-shadow: 0 2px 0 0 #a8423a !important;
 }
 
-@keyframes shimmer {
-  from {
-    transform: translateX(-100%);
-  }
-
-  to {
-    transform: translateX(100%);
-  }
+.sketch-btn {
+  position: relative;
+  border: 2px solid #2c2c2c !important;
+  border-radius: 25px 6px 22px 6px / 6px 22px 6px 25px !important;
+  background: #fbfaf5 !important;
+  color: #2c2c2c !important;
+  font-family: 'Caveat', cursive !important;
+  font-weight: 700 !important;
+  box-shadow: 3px 4px 0 rgba(44, 44, 44, 0.18) !important;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease !important;
 }
 
+.sketch-btn:hover {
+  transform: translate(-1px, -1px) rotate(-0.5deg) !important;
+  box-shadow: 5px 6px 0 rgba(44, 44, 44, 0.2) !important;
+  background: #fff7ec !important;
+}
+
+.sketch-btn:active {
+  transform: translate(2px, 3px) !important;
+  box-shadow: 1px 1px 0 rgba(44, 44, 44, 0.2) !important;
+}
+
+.sketch-btn-accent {
+  background: #a8423a !important;
+  color: #fbfaf5 !important;
+}
+
+.sketch-btn-accent:hover {
+  background: #b94c43 !important;
+}
+
+/* ----------------------------------------------------------
+   Sketch nav (top bar)
+---------------------------------------------------------- */
+.sketch-nav {
+  background: #fdfcf7 !important;
+  border: 2px solid #2c2c2c !important;
+  border-radius: 22px 80px 22px 80px / 80px 22px 80px 22px !important;
+  box-shadow: 3px 4px 0 rgba(44, 44, 44, 0.15) !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  transform: rotate(-0.4deg);
+}
+
+/* ----------------------------------------------------------
+   Reduced motion
+---------------------------------------------------------- */
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -251,4 +501,39 @@
     opacity: 1;
     transform: none;
   }
+
+  .draw-on-view svg :is(path, circle, rect, line, polyline, polygon, ellipse) {
+    stroke-dashoffset: 0;
+  }
+
+  .typewriter .tw-char {
+    opacity: 1;
+    transform: none;
+  }
+
+  .typewriter .tw-cursor {
+    opacity: 0;
+    animation: none;
+  }
+}
+
+/* Keyframes preserved */
+@keyframes hero-fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes hero-line-in {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes hero-float {
+  from { transform: translateY(-3px) rotate(-0.2deg); }
+  to { transform: translateY(4px) rotate(0.2deg); }
+}
+
+@keyframes card-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
 }

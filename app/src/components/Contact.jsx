@@ -68,23 +68,21 @@ export default function Contact() {
   return (
     <section id="contact" className="relative z-10 w-full px-4 py-32 md:px-8">
       <div className="anime-reveal mb-16 text-center">
-        <h2 className="inline-block pb-4 text-5xl font-bold text-white md:text-6xl">
-          ¿Iniciamos un <span className="bg-gradient-to-r from-magenta to-pink-500 bg-clip-text text-transparent text-glow-magenta">proyecto?</span>
+        <h2 className="inline-block pb-4 text-5xl font-bold text-text-main md:text-6xl">
+          <span className="typewriter">¿Iniciamos un </span>
+          <span className="typewriter bg-gradient-to-r from-magenta to-pink-500 bg-clip-text text-transparent text-glow-magenta">proyecto?</span>
         </h2>
-        <p className="mx-auto mt-4 max-w-2xl text-lg text-text-muted">
+        <p className="mx-auto mt-4 max-w-2xl text-xl text-text-main">
           Actualmente estoy disponible para nuevas oportunidades. Ya sea para un puesto full-time, part-time o un proyecto freelance.
         </p>
       </div>
 
-      <div className="glass-panel anime-reveal relative w-full overflow-hidden p-8 md:p-12">
-        <div className="pointer-events-none absolute right-0 top-0 h-64 w-64 rounded-full bg-magenta/10 blur-[100px] mix-blend-screen" />
-        <div className="pointer-events-none absolute bottom-0 left-0 h-64 w-64 rounded-full bg-cyan/10 blur-[100px] mix-blend-screen" />
-
+      <div className="glass-panel anime-reveal tilt-md relative w-full overflow-hidden p-8 md:p-12">
         <div className="relative z-10 grid items-start gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:gap-14">
           <div className="space-y-6">
             <div className="space-y-2">
-              <h3 className="text-2xl font-bold text-white md:text-3xl">Contacto directo</h3>
-              <p className="leading-relaxed text-text-muted">
+              <h3 className="text-3xl font-bold text-text-main md:text-4xl">Contacto directo</h3>
+              <p className="text-lg leading-relaxed text-text-main">
                 Si preferís algo rápido, acá tenés mis datos. Si no, dejame un mensaje y te respondo.
               </p>
             </div>
@@ -95,17 +93,17 @@ export default function Contact() {
                   href={whatsappUrl}
                   target="_blank"
                   rel="noreferrer"
-                  className="glass-panel glass-panel-hover group rounded-2xl border-border-glow/60 p-5 hover:border-cyan"
+                  className="glass-panel glass-panel-hover tilt-l group p-5"
                 >
                   <div className="flex items-start gap-4">
-                    <div className="flex h-11 w-11 items-center justify-center rounded-xl border border-cyan/20 bg-cyan/10 shadow-[0_0_30px_rgba(0,244,255,0.12)]">
-                      <FaWhatsapp className="h-5 w-5 text-cyan" />
+                    <div className="draw-on-view no-draw-fill flex h-12 w-12 items-center justify-center rounded-xl border-2 border-text-main text-cyan">
+                      <FaWhatsapp className="h-6 w-6" />
                     </div>
 
                     <div className="min-w-0">
-                      <div className="text-sm font-semibold text-white/80">WhatsApp</div>
-                      <div className="truncate text-lg text-white transition-all group-hover:text-glow-cyan">{phone}</div>
-                      <div className="mt-1 text-xs text-text-muted">Abrir WhatsApp</div>
+                      <div className="text-base font-semibold text-text-main/80">WhatsApp</div>
+                      <div className="truncate text-xl text-text-main transition-colors group-hover:text-magenta">{phone}</div>
+                      <div className="mt-1 text-sm text-text-main/60">Abrir WhatsApp</div>
                     </div>
                   </div>
                 </a>
@@ -116,33 +114,33 @@ export default function Contact() {
                   href={linkedinUrl}
                   target="_blank"
                   rel="noreferrer"
-                  className="glass-panel glass-panel-hover group rounded-2xl border-border-glow/60 p-5 hover:border-magenta"
+                  className="glass-panel glass-panel-hover tilt-r alt group p-5"
                 >
                   <div className="flex items-start gap-4">
-                    <div className="flex h-11 w-11 items-center justify-center rounded-xl border border-magenta/20 bg-magenta/10 shadow-[0_0_30px_rgba(255,0,85,0.12)]">
-                      <Linkedin className="h-5 w-5 text-magenta" />
+                    <div className="draw-on-view flex h-12 w-12 items-center justify-center rounded-xl border-2 border-text-main text-magenta">
+                      <Linkedin className="h-6 w-6" />
                     </div>
 
                     <div className="min-w-0">
-                      <div className="text-sm font-semibold text-white/80">LinkedIn</div>
-                      <div className="truncate text-lg text-white transition-all group-hover:text-glow-magenta">Ver perfil</div>
-                      <div className="mt-1 text-xs text-text-muted">Conectemos</div>
+                      <div className="text-base font-semibold text-text-main/80">LinkedIn</div>
+                      <div className="truncate text-xl text-text-main transition-colors group-hover:text-cyan">Ver perfil</div>
+                      <div className="mt-1 text-sm text-text-main/60">Conectemos</div>
                     </div>
                   </div>
                 </a>
               ) : null}
 
               {!hasDirectContact ? (
-                <div className="glass-panel rounded-2xl border-border-glow/40 p-5">
+                <div className="glass-panel tilt-l p-5">
                   <div className="flex items-start gap-4">
-                    <div className="flex h-11 w-11 items-center justify-center rounded-xl border border-border-glass bg-white/5">
-                      <AlertTriangle className="h-5 w-5 text-white/70" />
+                    <div className="draw-on-view flex h-12 w-12 items-center justify-center rounded-xl border-2 border-text-main text-text-main">
+                      <AlertTriangle className="h-6 w-6" />
                     </div>
 
                     <div>
-                      <div className="text-sm font-semibold text-white/80">Faltan tus datos</div>
-                      <div className="mt-1 text-sm text-text-muted">
-                        Configurá <span className="text-white/80">VITE_CONTACT_PHONE</span> y <span className="text-white/80">VITE_LINKEDIN_URL</span> en tu <span className="text-white/80">.env</span>.
+                      <div className="text-base font-semibold text-text-main">Faltan tus datos</div>
+                      <div className="mt-1 text-base text-text-main/80">
+                        Configurá <span className="text-magenta">VITE_CONTACT_PHONE</span> y <span className="text-magenta">VITE_LINKEDIN_URL</span> en tu <span className="text-magenta">.env</span>.
                       </div>
                     </div>
                   </div>
@@ -154,13 +152,13 @@ export default function Contact() {
           <form onSubmit={handleSubmit} className="flex flex-col gap-8">
             <div className="grid gap-8 md:grid-cols-2">
               <div className="group flex flex-col gap-2">
-                <label htmlFor="name" className="text-sm font-semibold text-white/70 transition-colors group-focus-within:text-cyan">Nombre completo</label>
+                <label htmlFor="name" className="font-syne text-lg text-text-main transition-colors group-focus-within:text-magenta">Nombre completo</label>
                 <input
                   type="text"
                   id="name"
                   value={form.name}
                   onChange={(event) => setForm((previous) => ({ ...previous, name: event.target.value }))}
-                  className="rounded-t-lg border-b border-border-glass bg-obsidian-light/50 px-4 py-3 text-white outline-none transition-all focus:border-cyan focus:bg-obsidian focus:shadow-[0_4px_20px_rgba(0,244,255,0.1)]"
+                  className="sketch-input text-lg text-text-main"
                   placeholder="Ej: Nombre"
                   autoComplete="name"
                   required
@@ -168,13 +166,13 @@ export default function Contact() {
               </div>
 
               <div className="group flex flex-col gap-2">
-                <label htmlFor="email" className="text-sm font-semibold text-white/70 transition-colors group-focus-within:text-magenta">Correo electrónico</label>
+                <label htmlFor="email" className="font-syne text-lg text-text-main transition-colors group-focus-within:text-cyan">Correo electrónico</label>
                 <input
                   type="email"
                   id="email"
                   value={form.email}
                   onChange={(event) => setForm((previous) => ({ ...previous, email: event.target.value }))}
-                  className="rounded-t-lg border-b border-border-glass bg-obsidian-light/50 px-4 py-3 text-white outline-none transition-all focus:border-magenta focus:bg-obsidian focus:shadow-[0_4px_20px_rgba(255,0,85,0.1)]"
+                  className="sketch-input text-lg text-text-main"
                   placeholder="mail@dominio.com"
                   autoComplete="email"
                   inputMode="email"
@@ -184,13 +182,13 @@ export default function Contact() {
             </div>
 
             <div className="group flex flex-col gap-2">
-              <label htmlFor="message" className="text-sm font-semibold text-white/70 transition-colors group-focus-within:text-white">Contame sobre tu proyecto</label>
+              <label htmlFor="message" className="font-syne text-lg text-text-main transition-colors group-focus-within:text-magenta">Contame sobre tu proyecto</label>
               <textarea
                 id="message"
                 rows="5"
                 value={form.message}
                 onChange={(event) => setForm((previous) => ({ ...previous, message: event.target.value }))}
-                className="resize-none rounded-lg border border-border-glass bg-obsidian-light/50 p-4 text-white outline-none transition-all focus:border-white focus:bg-obsidian focus:shadow-[0_4px_20px_rgba(255,255,255,0.1)]"
+                className="sketch-input resize-none text-lg text-text-main"
                 placeholder="Objetivo, alcance, presupuesto (si aplica), tiempos..."
                 required
               />
@@ -199,23 +197,26 @@ export default function Contact() {
             {status.state !== 'idle' ? (
               <div
                 className={[
-                  'flex items-start gap-3 rounded-2xl border px-4 py-4 text-sm',
+                  'flex items-start gap-3 border-2 px-4 py-4 text-base',
                   status.state === 'success'
-                    ? 'border-cyan/20 bg-cyan/10 text-white'
+                    ? 'border-text-main bg-cyan/15 text-text-main'
                     : status.state === 'error'
-                      ? 'border-magenta/20 bg-magenta/10 text-white'
-                      : 'border-border-glass bg-white/5 text-white/90',
+                      ? 'border-text-main bg-magenta/15 text-text-main'
+                      : 'border-text-main bg-obsidian-light text-text-main',
                 ].join(' ')}
+                style={{ borderRadius: '20px 6px 22px 6px / 6px 22px 6px 20px' }}
                 role="status"
                 aria-live="polite"
               >
-                {status.state === 'success' ? (
-                  <Check className="mt-0.5 h-5 w-5 text-cyan" />
-                ) : status.state === 'error' ? (
-                  <AlertTriangle className="mt-0.5 h-5 w-5 text-magenta" />
-                ) : (
-                  <Loader2 className="mt-0.5 h-5 w-5 animate-spin text-white/80" />
-                )}
+                <span className={`draw-on-view mt-0.5 inline-flex ${status.state === 'success' ? 'text-cyan' : status.state === 'error' ? 'text-magenta' : 'text-text-main'}`}>
+                  {status.state === 'success' ? (
+                    <Check className="h-5 w-5" />
+                  ) : status.state === 'error' ? (
+                    <AlertTriangle className="h-5 w-5" />
+                  ) : (
+                    <Loader2 className="h-5 w-5 animate-spin" />
+                  )}
+                </span>
 
                 <div className="leading-relaxed">
                   {status.state === 'sending' ? 'Enviando...' : status.message}
@@ -228,13 +229,11 @@ export default function Contact() {
                 type="submit"
                 disabled={!canSubmit}
                 className={[
-                  'group relative w-full overflow-hidden rounded-full border bg-obsidian px-10 py-4 font-syne text-lg font-bold shadow-[0_0_20px_rgba(255,255,255,0.1)] transition-all duration-300 md:w-auto',
-                  canSubmit
-                    ? 'border-border-glow hover:border-magenta hover:shadow-[0_0_30px_rgba(255,0,85,0.3)]'
-                    : 'cursor-not-allowed border-border-glass opacity-60',
+                  'sketch-btn px-10 py-3 text-xl',
+                  canSubmit ? 'sketch-btn-accent' : 'opacity-60 cursor-not-allowed',
                 ].join(' ')}
               >
-                <span className="relative z-10 flex items-center justify-center gap-2 transition-colors duration-300 group-hover:text-white">
+                <span className="relative z-10 flex items-center justify-center gap-2">
                   {status.state === 'sending' ? (
                     <>
                       Enviando
@@ -247,15 +246,14 @@ export default function Contact() {
                     </>
                   )}
                 </span>
-                <div className="absolute inset-0 bg-gradient-to-r from-magenta/20 to-cyan/20 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
               </button>
             </div>
 
-            <div className="text-center text-xs text-text-muted">
+            <div className="text-center text-sm text-text-main/70">
               {formAction ? (
                 <span>Tu mensaje se envía de forma segura mediante un endpoint externo.</span>
               ) : (
-                <span>Para que el formulario funcione, configurá <span className="text-white/70">VITE_CONTACT_FORM_ACTION</span> en tu <span className="text-white/70">.env</span>.</span>
+                <span>Para que el formulario funcione, configurá <span className="text-magenta">VITE_CONTACT_FORM_ACTION</span> en tu <span className="text-magenta">.env</span>.</span>
               )}
             </div>
           </form>
