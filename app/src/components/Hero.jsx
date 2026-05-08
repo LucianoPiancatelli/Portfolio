@@ -30,11 +30,12 @@ export default function Hero() {
           <div className="hero-line gothic-divider mb-8 mt-2 w-48" />
 
           <h1 className="hero-line text-glow-magenta mb-6 text-6xl font-bold leading-tight md:text-8xl lg:text-9xl">
-            <span className="typewriter block bg-gradient-to-r from-magenta via-magenta to-cyan bg-clip-text text-transparent">Luciano </span>
-            <span className="typewriter block">Piancatelli</span>
+            <span className="typewriter block bg-gradient-to-r from-magenta via-magenta to-cyan bg-clip-text text-transparent">
+              Luciano Piancatelli
+            </span>
           </h1>
 
-          <h2 className="typewriter hero-line mb-8 text-2xl font-light text-text-main md:text-4xl">
+          <h2 className="typewriter hero-line block mb-8 text-2xl font-light text-text-main md:text-4xl">
             Desarrollo productos digitales end to end con foco en experiencia, negocio y conversión.
           </h2>
 

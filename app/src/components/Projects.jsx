@@ -39,9 +39,8 @@ export default function Projects() {
   return (
     <section id="projects" className="relative z-10 w-full px-4 py-24 md:px-8">
       <div className="anime-reveal mb-20 text-center">
-        <h2 className="inline-block pb-4 text-5xl font-bold text-text-main md:text-6xl">
-          <span className="typewriter">Proyectos </span>
-          <span className="typewriter bg-gradient-to-r from-cyan to-blue-400 bg-clip-text text-transparent text-glow-cyan">Destacados</span>
+        <h2 className="typewriter hero-line block pb-4 text-5xl font-bold text-text-main md:text-6xl bg-gradient-to-r from-cyan to-blue-400 bg-clip-text text-transparent text-glow-cyan">
+          Proyectos Destacados
         </h2>
         <div className="gothic-divider mx-auto mt-4" />
       </div>

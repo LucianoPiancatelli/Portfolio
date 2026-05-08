@@ -215,8 +215,8 @@
   opacity: 0;
   transform: translate3d(0, 24px, 0);
   transition:
-    opacity 0.9s ease,
-    transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+    opacity 1.4s ease,
+    transform 1.4s cubic-bezier(0.22, 1, 0.36, 1);
   transition-delay: var(--reveal-delay, 0ms);
 }
 
@@ -228,7 +228,7 @@
 .timeline-line {
   transform: scaleY(0);
   transform-origin: top;
-  transition: transform 1.2s ease;
+  transition: transform 1.4s ease;
   transition-delay: 150ms;
 }
 
@@ -245,7 +245,7 @@
 }
 
 /* ----------------------------------------------------------
-   Hero / floats kept (subtler)
+   Hand-drawn divider
 ---------------------------------------------------------- */
 .bg-orb {
   display: none !important;
@@ -339,6 +339,12 @@
 ---------------------------------------------------------- */
 .typewriter {
   position: relative;
+  display: inline-block;
+  white-space: normal;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  hyphens: auto;
+  max-width: 100%;
 }
 
 .typewriter .tw-char {
@@ -349,7 +355,7 @@
 }
 
 .typewriter.tw-running .tw-char {
-  animation: tw-in 60ms ease forwards;
+  animation: tw-in 80ms ease forwards;
   animation-delay: var(--tw-d, 0ms);
 }
 

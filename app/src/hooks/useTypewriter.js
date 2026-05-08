@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 
-const PER_CHAR_MS = 38;
-const MAX_TOTAL_DELAY_MS = 2400;
+const PER_CHAR_MS = 55;
+const MAX_TOTAL_DELAY_MS = 3200;
 
 function splitText(node) {
   if (node.dataset.twInit === '1') return Number(node.dataset.twTotal || 0);
