@@ -29,17 +29,17 @@ export default function Hero() {
 
           <div className="hero-line gothic-divider mb-8 mt-2 w-48" />
 
-          <h1 className="hero-line text-glow-magenta mb-6 text-6xl font-bold leading-tight md:text-8xl lg:text-9xl">
-            <span className="typewriter block bg-gradient-to-r from-magenta via-magenta to-cyan bg-clip-text text-transparent">
+          <h1 className="hero-line text-glow-magenta mb-6 text-5xl font-bold leading-tight sm:text-6xl md:text-8xl lg:text-9xl">
+            <span className="typewriter block bg-gradient-to-r from-magenta via-magenta to-cyan bg-clip-text text-transparent break-words whitespace-normal">
               Luciano Piancatelli
             </span>
           </h1>
 
-          <h2 className="typewriter hero-line block mb-8 text-2xl font-light text-text-main md:text-4xl">
+          <h2 className="typewriter hero-line block mb-8 text-2xl font-light text-text-main md:text-4xl break-words">
             Desarrollo productos digitales end to end con foco en experiencia, negocio y conversión.
           </h2>
 
-          <p className="typewriter hero-line mx-auto mb-12 max-w-2xl text-lg text-text-main md:text-xl">
+          <p className="typewriter hero-line mx-auto mb-12 max-w-2xl text-lg text-text-main md:text-xl break-words">
             Portfolio orientado a mostrar trabajo real: soluciones full stack que integran diseño, frontend, backend y una implementación clara para llevar ideas a producción.
           </p>
 

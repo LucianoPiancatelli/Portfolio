@@ -19,7 +19,7 @@ export default function Projects() {
       result: 'Resultado: catálogo + administración de productos.',
       tech: ['PHP', 'Laravel 11', 'MySQL', 'Tailwind', 'Vite', 'Blade'],
       github: 'https://github.com/LucianoPiancatelli/multiverse-comics',
-      live: '',
+      live: 'https://multiverse-comics-b5qp.onrender.com/',
       image: '/projects/multiverse.png',
     },
     {
