@@ -1,7 +1,7 @@
 export default function Hero() {
   return (
     <section id="hero" className="hero-intro relative z-10 flex min-h-screen flex-col items-center justify-center p-6 text-center md:p-12">
-      <div className="hero-card glass-panel glass-panel-hover tilt-md relative w-full overflow-hidden p-10 md:p-20">
+      <div className="hero-card glass-panel glass-panel-hover tilt-md relative w-full overflow-hidden p-4 sm:p-10 md:p-20">
         <div
           aria-hidden="true"
           className="pointer-events-none absolute inset-0 opacity-50"
@@ -29,7 +29,7 @@ export default function Hero() {
 
           <div className="hero-line gothic-divider mb-8 mt-2 w-48" />
 
-          <h1 className="hero-line text-glow-magenta mb-6 text-5xl font-bold leading-tight sm:text-6xl md:text-8xl lg:text-9xl">
+          <h1 className="hero-line text-glow-magenta mb-6 text-[6vw] font-bold leading-tight sm:text-5xl md:text-8xl lg:text-9xl">
             <span className="typewriter block bg-gradient-to-r from-magenta via-magenta to-cyan bg-clip-text text-transparent break-words whitespace-normal">
               Luciano Piancatelli
             </span>
