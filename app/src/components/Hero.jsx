@@ -52,7 +52,7 @@ export default function Hero() {
             </a>
 
             <a
-              href="/cv-luciano-piancatelli.pdf"
+              href="/cv-piancatelli-luciano.pdf"
               target="_blank"
               rel="noreferrer"
               className="sketch-btn inline-flex w-full items-center justify-center px-8 py-3 text-xl sm:w-auto"
