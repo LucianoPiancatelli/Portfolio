@@ -69,10 +69,10 @@ export default function Contact() {
     <section id="contact" className="relative z-10 w-full px-4 py-32 md:px-8">
       <div className="anime-reveal mb-16 text-center">
         <h2 className="typewriter hero-line block pb-4 text-5xl font-bold text-text-main md:text-6xl bg-gradient-to-r from-magenta to-pink-500 bg-clip-text text-transparent text-glow-magenta">
-          ¿Iniciamos un proyecto?
+          ¿Hablamos?
         </h2>
         <p className="mx-auto mt-4 max-w-2xl text-xl text-text-main">
-          Actualmente estoy disponible para nuevas oportunidades. Ya sea para un puesto full-time, part-time o un proyecto freelance.
+          Estoy buscando mi primera oportunidad como desarrollador frontend junior (full-time, part-time o freelance). Escribime y te respondo a la brevedad.
         </p>
       </div>
 

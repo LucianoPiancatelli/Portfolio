@@ -17,23 +17,30 @@ function splitText(node) {
     node.setAttribute('aria-label', original);
   }
 
-  const chars = Array.from(original);
+  const words = original.split(/(\s+)/);
+  const totalChars = Array.from(original).filter((c) => c.trim()).length || 1;
   const fragment = document.createDocumentFragment();
-  const perChar = Math.max(8, Math.min(PER_CHAR_MS, Math.floor(MAX_TOTAL_DELAY_MS / chars.length)));
+  const perChar = Math.max(8, Math.min(PER_CHAR_MS, Math.floor(MAX_TOTAL_DELAY_MS / totalChars)));
 
   let visibleIndex = 0;
-  chars.forEach((char) => {
-    const span = document.createElement('span');
-    span.className = 'tw-char';
-    span.setAttribute('aria-hidden', 'true');
-    span.textContent = char;
-    if (char !== ' ' && char !== '\u00a0') {
+  words.forEach((word) => {
+    if (!word) return;
+    if (/^\s+$/.test(word)) {
+      fragment.appendChild(document.createTextNode(' '));
+      return;
+    }
+    const wordSpan = document.createElement('span');
+    wordSpan.className = 'tw-word';
+    wordSpan.setAttribute('aria-hidden', 'true');
+    Array.from(word).forEach((char) => {
+      const span = document.createElement('span');
+      span.className = 'tw-char';
+      span.textContent = char;
       span.style.setProperty('--tw-d', `${visibleIndex * perChar}ms`);
       visibleIndex += 1;
-    } else {
-      span.style.setProperty('--tw-d', `${visibleIndex * perChar}ms`);
-    }
-    fragment.appendChild(span);
+      wordSpan.appendChild(span);
+    });
+    fragment.appendChild(wordSpan);
   });
 
   const cursor = document.createElement('span');

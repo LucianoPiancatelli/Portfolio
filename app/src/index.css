@@ -1,10 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Patrick+Hand&family=Indie+Flower&display=swap');
-
 @import "tailwindcss";
 
 @theme {
   --font-syne: 'Caveat', 'Indie Flower', cursive;
-  --font-manrope: 'Patrick Hand', 'Caveat', cursive;
+  --font-manrope: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
 
   --color-obsidian: #fbfaf5;
   --color-obsidian-light: #f3eee2;
@@ -40,8 +38,9 @@
     background-attachment: fixed, fixed;
     background-size: 32px 32px, 320px 320px;
     background-repeat: repeat, repeat;
-    font-size: 1.05rem;
-    letter-spacing: 0.01em;
+    font-size: 1rem;
+    line-height: 1.65;
+    letter-spacing: 0;
   }
 
   h1,
@@ -66,7 +65,7 @@
   button,
   input,
   textarea {
-    font-family: 'Patrick Hand', 'Caveat', cursive;
+    font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
   }
 
   ::selection {
@@ -343,10 +342,12 @@
   position: relative;
   display: inline-block;
   white-space: normal;
-  overflow-wrap: break-word;
-  word-break: break-word;
-  hyphens: auto;
   max-width: 100%;
+}
+
+.typewriter .tw-word {
+  display: inline-block;
+  white-space: nowrap;
 }
 
 .typewriter .tw-char {
