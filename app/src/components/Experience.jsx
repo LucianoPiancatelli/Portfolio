@@ -6,7 +6,7 @@ export default function Experience() {
       title: 'Empleado de Logística',
       company: 'DFV S.R.L',
       date: 'May 2023 - Oct 2024',
-      description: 'Coordinación y armado de hojas de ruta, control de stock, expedición y preparación de pedidos en entornos logísticos de alta rotación.',
+      description: 'Armado de hojas de ruta, control de stock y preparación de pedidos. Trabajo con plazos ajustados y atención al detalle.',
       icon: <Briefcase className="h-3 w-3" />,
       tone: 'cyan',
     },
@@ -14,7 +14,7 @@ export default function Experience() {
       title: 'Atención al Cliente',
       company: 'Burger King',
       date: 'Dic 2017 - May 2018',
-      description: 'Gestión directa de atención al cliente en un entorno de comida rápida, resolución de conflictos y trabajo bajo presión constante.',
+      description: 'Atención directa al público y resolución de problemas bajo presión.',
       icon: <Briefcase className="h-3 w-3" />,
       tone: 'magenta',
     },
@@ -22,7 +22,7 @@ export default function Experience() {
       title: 'Cadete Administrativo',
       company: 'Ancamar S.A',
       date: 'Jun 2017 - Dic 2017',
-      description: 'Trámites administrativos generales, control de depósito y organización física de expedientes y pedidos.',
+      description: 'Trámites administrativos, control de depósito y organización de expedientes.',
       icon: <Landmark className="h-3 w-3" />,
       tone: 'cyan',
     },
@@ -32,10 +32,14 @@ export default function Experience() {
     <section id="experience" className="relative z-10 w-full px-4 py-24 md:px-8">
       <div className="anime-reveal mb-20 text-center">
         <h2 className="typewriter hero-line block pb-4 text-4xl font-bold text-text-main md:text-6xl">
-          Trayectoria Laboral
+          Experiencia previa
         </h2>
         <div className="gothic-divider mt-5 w-40" />
       </div>
+
+      <p className="mx-auto -mt-10 mb-16 max-w-2xl text-center text-base text-text-main md:text-lg">
+        Vengo de trabajos fuera de tecnología. De ahí traigo orden, responsabilidad y la costumbre de cumplir plazos, que hoy aplico al código.
+      </p>
 
       <div className="relative">
         <div className="timeline-line timeline-wavy anime-reveal absolute bottom-0 left-2 top-0 md:left-4" />
@@ -72,7 +76,7 @@ export default function Experience() {
                     </span>
                   </div>
 
-                  <p className="text-lg leading-relaxed text-text-main md:text-xl">{experience.description}</p>
+                  <p className="text-base leading-relaxed text-text-main md:text-lg">{experience.description}</p>
                 </div>
               </div>
             );

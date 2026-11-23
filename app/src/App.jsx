@@ -15,9 +15,9 @@ function App() {
   const navLinks = useMemo(
     () => [
       { id: 'about', label: 'Sobre mí', glow: 'hover:text-glow-magenta' },
-      { id: 'skills', label: 'Tecnologías', glow: 'hover:text-glow-cyan' },
-      { id: 'experience', label: 'Experiencia', glow: 'hover:text-glow-magenta' },
       { id: 'projects', label: 'Proyectos', glow: 'hover:text-glow-cyan' },
+      { id: 'skills', label: 'Skills', glow: 'hover:text-glow-cyan' },
+      { id: 'experience', label: 'Experiencia', glow: 'hover:text-glow-magenta' },
       { id: 'contact', label: 'Contacto', glow: 'hover:text-glow-magenta' },
     ],
     [],
@@ -77,9 +77,9 @@ function App() {
 
       <nav
         aria-label="Secciones del portfolio"
-        className="sketch-nav fixed left-1/2 top-4 z-50 w-[94%] max-w-4xl -translate-x-1/2 px-5 py-3 sm:top-6 sm:px-7 md:w-auto md:px-9"
+        className="sketch-nav fixed left-1/2 top-2 z-50 w-[94%] max-w-4xl -translate-x-1/2 px-3 py-2 sm:top-6 sm:px-7 sm:py-3 md:w-auto md:px-9"
       >
-        <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 font-syne text-base font-semibold tracking-wide text-text-main sm:text-lg">
+        <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-0.5 font-syne text-base font-semibold tracking-wide text-text-main sm:gap-x-5 sm:gap-y-2 sm:text-lg">
           {navLinks.map((link) => (
             <a
               key={link.id}
@@ -96,19 +96,19 @@ function App() {
         </div>
       </nav>
 
-      <main id="main-content" className="relative z-10 px-4 pt-24 md:px-8">
+      <main id="main-content" className="relative z-10 px-4 pt-20 md:px-8">
         <Hero />
         <About />
+        <Projects />
         <Skills />
         <Experience />
-        <Projects />
         <Contact />
       </main>
 
       <footer className="relative z-10 mt-32 py-12 text-center font-manrope text-text-main">
         <div className="glass-panel tilt-r mx-auto inline-block max-w-3xl p-6">
           <p className="text-base">Diseñado y desarrollado por Luciano Piancatelli.</p>
-          <p className="mt-2 text-sm opacity-70">© {new Date().getFullYear()} · Construido con React, Vite y Tailwind CSS.</p>
+          <p className="mt-2 text-sm opacity-70">© {new Date().getFullYear()} · Hecho con React, Vite y Tailwind CSS.</p>
         </div>
       </footer>
     </div>

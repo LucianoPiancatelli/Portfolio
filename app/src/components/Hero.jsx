@@ -13,7 +13,7 @@ export default function Hero() {
 
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute -right-6 top-6 h-20 w-28 rotate-6"
+          className="pointer-events-none absolute -right-6 top-6 hidden h-20 w-28 rotate-6 sm:block"
           style={{
             backgroundImage:
               "url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 110 80'><path d='M5 40 C 25 10, 60 65, 105 30' fill='none' stroke='%23a8423a' stroke-width='2.4' stroke-linecap='round'/><path d='M95 22 L105 30 L95 38' fill='none' stroke='%23a8423a' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/></svg>\")",
@@ -24,23 +24,23 @@ export default function Hero() {
 
         <div className="relative z-10">
           <p className="hero-line mb-4 font-syne text-base font-semibold tracking-[0.18em] text-cyan md:text-lg">
-            Full Stack Developer · Product Builder
+            Desarrollador Frontend Junior · React
           </p>
 
           <div className="hero-line gothic-divider mb-8 mt-2 w-48" />
 
-          <h1 className="hero-line text-glow-magenta mb-6 text-[6vw] font-bold leading-tight sm:text-5xl md:text-8xl lg:text-9xl">
-            <span className="typewriter block bg-gradient-to-r from-magenta via-magenta to-cyan bg-clip-text text-transparent break-words whitespace-normal">
+          <h1 className="hero-line text-glow-magenta mb-6 text-5xl font-bold leading-tight sm:text-6xl md:text-8xl lg:text-9xl">
+            <span className="typewriter block bg-gradient-to-r from-magenta via-magenta to-cyan bg-clip-text text-transparent">
               Luciano Piancatelli
             </span>
           </h1>
 
-          <h2 className="typewriter hero-line block mb-8 text-2xl font-light text-text-main md:text-4xl break-words">
-            Desarrollo productos digitales end to end con foco en experiencia, negocio y conversión.
+          <h2 className="hero-line mx-auto mb-8 max-w-3xl text-2xl font-semibold leading-snug text-text-main md:text-4xl">
+            Construyo interfaces claras y responsive con React y Tailwind CSS.
           </h2>
 
-          <p className="typewriter hero-line mx-auto mb-12 max-w-2xl text-lg text-text-main md:text-xl break-words">
-            Portfolio orientado a mostrar trabajo real: soluciones full stack que integran diseño, frontend, backend y una implementación clara para llevar ideas a producción.
+          <p className="hero-line mx-auto mb-12 max-w-2xl text-base leading-relaxed text-text-main md:text-lg">
+            Formado en diseño y desarrollo web, con proyectos completos en producción. Aunque también trabajé el backend, lo que más disfruto es el frontend. Busco mi primera oportunidad profesional en un equipo donde seguir creciendo.
           </p>
 
           <div className="hero-line flex flex-col items-center justify-center gap-4 sm:flex-row">

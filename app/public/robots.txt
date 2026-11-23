@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://lucianopiancatelli.netlify.app/sitemap.xml

@@ -4,52 +4,42 @@ export default function Projects() {
   const projects = [
     {
       title: 'JOBLU',
-      description: 'Plataforma full stack enfocada en mejorar la búsqueda laboral con IA, generación de CV optimizados para ATS y herramientas para vacantes y networking profesional.',
-      role: 'Rol: Full stack (UI + API + arquitectura)',
-      result: 'Resultado: MVP funcional + deploy público.',
-      tech: ['React', 'Node.js', 'Express', 'Tailwind', 'MongoDB', 'OpenAI'],
+      description: 'Plataforma para la búsqueda laboral: crea CVs optimizados para sistemas ATS con ayuda de IA, permite guardar vacantes y tiene un foro para compartir experiencias de entrevistas. Fue mi proyecto de tesis.',
+      role: 'Mi rol: full stack, con el foco en la interfaz en React.',
+      result: 'Incluye un modo demo con un clic para explorarla sin registrarse.',
+      tech: ['React', 'Node.js', 'Express', 'MongoDB', 'Tailwind', 'OpenAI'],
       github: 'https://github.com/LucianoPiancatelli/Tesis-Joblu',
       live: 'https://joblu.vercel.app/',
       image: '/projects/joblu.png',
     },
     {
       title: 'Multiverse Comics',
-      description: 'E-commerce de cómics construido con Laravel, catálogo dinámico, gestión de productos y una experiencia pensada para una comunidad de lectores.',
-      role: 'Rol: Full stack (Laravel + UI + base de datos)',
-      result: 'Resultado: catálogo + administración de productos.',
+      description: 'Tienda online de cómics de DC y Marvel con catálogo, carrito, cuentas de usuario, blog de noticias y administración de productos.',
+      role: 'Mi rol: full stack con Laravel, diseño de la interfaz y base de datos.',
+      result: 'Diseño responsive con identidad visual propia.',
       tech: ['PHP', 'Laravel 11', 'MySQL', 'Tailwind', 'Vite', 'Blade'],
       github: 'https://github.com/LucianoPiancatelli/multiverse-comics',
       live: 'https://multiverse-comics-b5qp.onrender.com/',
-      image: '/projects/multiverse.png',
-    },
-    {
-      title: 'Gusto Argento',
-      description: 'Landing page para un restaurante de comida argentina con foco en identidad visual, presentación de marca y captación rápida.',
-      role: 'Rol: Diseño + desarrollo frontend',
-      result: 'Resultado: landing rápida y responsive.',
-      tech: ['HTML', 'CSS', 'JavaScript', 'Bootstrap'],
-      github: 'https://github.com/LucianoPiancatelli/Gusto-Argento',
-      live: 'https://gustoargentodavinci.netlify.app/',
-      image: '/projects/gusto-argento.png',
+      image: '/projects/multiverse.webp',
     },
   ];
 
-  const tilts = ['tilt-l', 'tilt-md', 'tilt-r'];
+  const tilts = ['tilt-l', 'tilt-r'];
 
   return (
     <section id="projects" className="relative z-10 w-full px-4 py-24 md:px-8">
       <div className="anime-reveal mb-20 text-center">
         <h2 className="typewriter hero-line block pb-4 text-5xl font-bold text-text-main md:text-6xl bg-gradient-to-r from-cyan to-blue-400 bg-clip-text text-transparent text-glow-cyan">
-          Proyectos Destacados
+          Proyectos
         </h2>
         <div className="gothic-divider mx-auto mt-4" />
       </div>
 
-      <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
+      <div className="mx-auto grid max-w-5xl gap-10 md:grid-cols-2">
         {projects.map((project, index) => (
           <div
             key={project.title}
-            className={`glass-panel glass-panel-hover anime-reveal ${tilts[index % tilts.length]} ${index % 2 === 0 ? '' : 'alt'} group relative flex h-full cursor-pointer flex-col overflow-hidden transform-gpu`}
+            className={`glass-panel glass-panel-hover anime-reveal ${tilts[index % tilts.length]} ${index % 2 === 0 ? '' : 'alt'} group relative flex h-full flex-col overflow-hidden transform-gpu`}
             style={{ '--reveal-delay': `${index * 120}ms` }}
           >
             <div className="relative w-full overflow-hidden border-b-2 border-text-main bg-obsidian-light aspect-[16/9]">
@@ -72,19 +62,6 @@ export default function Projects() {
                     "url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/></filter><rect width='160' height='160' filter='url(%23n)' opacity='0.35'/></svg>\")",
                 }}
               />
-
-              <div className="absolute bottom-3 left-3 flex flex-wrap gap-2">
-                {project.tech.slice(0, 2).map((tech) => (
-                  <span key={tech} className="sketch-chip text-sm">
-                    {tech}
-                  </span>
-                ))}
-                {project.tech.length > 2 ? (
-                  <span className="sketch-chip text-sm">
-                    +{project.tech.length - 2}
-                  </span>
-                ) : null}
-              </div>
             </div>
 
             <div className="project-content relative z-10 flex flex-grow flex-col p-6">
@@ -93,8 +70,8 @@ export default function Projects() {
 
               <div className="mb-6 space-y-3">
                 <div className="flex flex-col gap-1 text-base text-text-main/80">
-                  <div className="font-syne text-lg tracking-wide text-text-main">{project.role}</div>
-                  <div className="font-syne text-lg tracking-wide text-text-main/85">{project.result}</div>
+                  <div className="text-base font-medium text-text-main">{project.role}</div>
+                  <div className="text-base text-text-main/80">{project.result}</div>
                 </div>
 
                 <div className="flex flex-wrap gap-2">
